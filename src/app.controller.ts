@@ -10,7 +10,7 @@ export class AppController {
     return this.appService.getHello();
   }
   @Get('/aaa/:id')
-  findOne(@Param('id') id: string) {
-    return `This action returns a #${id} cat`;
+  getIdTest(@Param('id') id: string) {
+    return this.appService.getIdTest(id);
   }
 }
