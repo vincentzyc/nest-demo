@@ -3,9 +3,6 @@
  * @param {key} key 需要获取的key
  * @return:
  * @Description: 根据key从一段url中获取query值
- * @Author: 水痕
- * @LastEditors: 水痕
- * @Date: 2019-08-08 15:20:15
  */
 export const getUrlQuery = (
   url: {
