@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get,Query } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserEntity } from './user.entity';
 
@@ -7,7 +7,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get()
-  findAll(): Promise<UserEntity[]> {
-    return this.userService.findAll();
+  findAll(@Query() query: Object): Promise<UserEntity[]> {
+    return this.userService.findAll(query);
   }
 }
