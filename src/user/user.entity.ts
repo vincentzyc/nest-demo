@@ -6,6 +6,11 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 
+export interface UserResult {
+  list: UserEntity[],
+  total: number
+}
+
 @Entity('usertest')
 export class UserEntity {
   @PrimaryGeneratedColumn({
