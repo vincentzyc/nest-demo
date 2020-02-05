@@ -1,21 +1,21 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UserEntity, UserResult } from './product.entity';
+import { ProductEntity, ProductResult } from './product.entity';
 
-interface UserQuery {
+interface ProductQuery {
   pageSize?: number;
   pageIndex?: number;
 }
 
 @Injectable()
-export class UserService {
+export class ProductService {
   constructor(
-    @InjectRepository(UserEntity)
-    private readonly userRepository: Repository<UserEntity>,
+    @InjectRepository(ProductEntity)
+    private readonly userRepository: Repository<ProductEntity>,
   ) { }
 
-  async findAll(query: UserQuery): Promise<UserResult> {
+  async findAll(query: ProductQuery): Promise<ProductResult> {
     const [users, total] = await this.userRepository
       .createQueryBuilder('user')
       .offset(((query.pageIndex || 1) - 1) * (query.pageSize || 0)) // 从多少条开始
