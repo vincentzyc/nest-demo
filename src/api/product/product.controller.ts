@@ -1,13 +1,13 @@
 import { Controller, Get, Query } from '@nestjs/common';
-import { UserService } from './product.service';
-import { UserResult } from './product.entity';
+import { ProductService } from './product.service';
+import { ProductResult } from './product.entity';
 
 @Controller('product')
 export class UserController {
-  constructor(private readonly userService: UserService) { }
+  constructor(private readonly ProductService: ProductService) { }
 
   @Get()
-  findAll(@Query() query: Object): Promise<UserResult> {
-    return this.userService.findAll(query);
+  findAll(@Query() query: Object): Promise<ProductResult> {
+    return this.ProductService.findAll(query);
   }
 }
