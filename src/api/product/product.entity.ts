@@ -6,61 +6,79 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 
-export interface UserResult {
-  list: UserEntity[],
+export interface ProductResult {
+  list: ProductEntity[],
   total: number
 }
 
-@Entity('usertest')
-export class UserEntity {
+@Entity('goods')
+export class ProductEntity {
   @PrimaryGeneratedColumn({
     type: 'int',
-    name: 'id',
+    name: 'goodsid',
   })
-  id: number;
+  goodsid: number;
 
   @Column('varchar', {
     nullable: false,
-    length: 10,
-    name: 'username',
-    comment: '用户名',
+    name: 'title',
+    comment: '标题',
   })
-  username: string;
+  title: string;
 
   @Column('varchar', {
     nullable: false,
-    name: 'password',
-    comment: '密码',
+    name: 'price',
+    comment: '价格',
   })
-  password: string;
+  price: string;
 
   @Column('varchar', {
     nullable: true,
-    length: 100,
-    name: 'email',
-    comment: 'email',
+    name: 'ad',
+    comment: '广告词',
   })
-  email: string | null;
+  ad: string;
 
   @Column('varchar', {
     nullable: true,
-    length: 11,
-    name: 'phone',
-    comment: '手机号码',
+    name: 'goodsimg',
+    comment: '产品图片',
   })
-  phone: string | null;
+  gppdsimg: string;
 
-  @CreateDateColumn({
-    type: 'timestamp',
-    name: 'create_at',
-    comment: '创建时间',
+  @Column('varchar', {
+    nullable: true,
+    name: 'detailimg',
+    comment: '详情图片',
   })
-  createAt: Date;
+  detailimg: string;
 
-  @UpdateDateColumn({
-    type: 'timestamp',
-    name: 'update_at',
-    comment: '最后更新时间',
+  @Column('varchar', {
+    nullable: true,
+    name: 'spec',
+    comment: '规格',
   })
-  updateAt: Date;
+  spec: string;
+
+  @Column('varchar', {
+    nullable: true,
+    name: 'classify',
+    comment: '分类',
+  })
+  classify: string;
+
+  // @CreateDateColumn({
+  //   type: 'timestamp',
+  //   name: 'create_at',
+  //   comment: '创建时间',
+  // })
+  // createAt: Date;
+
+  // @UpdateDateColumn({
+  //   type: 'timestamp',
+  //   name: 'update_at',
+  //   comment: '最后更新时间',
+  // })
+  // updateAt: Date;
 }
