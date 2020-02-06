@@ -67,18 +67,4 @@ export class ProductEntity {
     comment: '分类',
   })
   classify: string;
-
-  // @CreateDateColumn({
-  //   type: 'timestamp',
-  //   name: 'create_at',
-  //   comment: '创建时间',
-  // })
-  // createAt: Date;
-
-  // @UpdateDateColumn({
-  //   type: 'timestamp',
-  //   name: 'update_at',
-  //   comment: '最后更新时间',
-  // })
-  // updateAt: Date;
 }
