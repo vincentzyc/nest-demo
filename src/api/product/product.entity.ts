@@ -1,9 +1,7 @@
 import {
   Column,
   Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-  CreateDateColumn,
+  PrimaryGeneratedColumn
 } from 'typeorm';
 
 export interface ProductResult {
