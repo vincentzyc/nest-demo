@@ -8,7 +8,7 @@
 $ npm install
 ```
 
-根目录下（与src目录同级） 新建 ormconfig.json 文件，写入数据库信息
+项目根目录下（与src目录同级） 新建 ormconfig.json 文件，写入数据库信息
 
 ```
 {
